@@ -5,8 +5,9 @@ function validateForm() {
 		username,
 		password,
 	}
+	const url = "http://192.168.56.2/login" // "http://localhost:3000/login"
 	console.log(body)
-	fetch('http://localhost:3000/login', {
+	fetch(url, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -24,7 +25,7 @@ function validateForm() {
 							</div>`
 				document.getElementById('popup').innerHTML = popup
 			} else {
-				window.location = 'http://localhost:3000/login'
+				window.location = url
 			}
 		})
 		.catch((err) => console.log(err))
